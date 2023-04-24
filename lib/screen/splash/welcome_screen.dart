@@ -23,7 +23,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     super.dispose();
     debugPrint('im disposed');
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,9 +38,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Column(
-              children: const [
+              children: [
                 //title text
-                Text(
+                const Text(
                   textAlign: TextAlign.center,
                   'Welcome to Medica',
                   style: TextStyle(
@@ -50,9 +50,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
                 //subtitle text
                 Text(
-                    textAlign: TextAlign.center,
-                    'The best online doctor appointment & consultation app of the country for your health and medical needs!',
-                  style: TextStyle(color: Colors.black, fontSize: 16),
+                  textAlign: TextAlign.center,
+                  'The best online doctor appointment & consultation app of the country for your health and medical needs!',
+                  style: TextStyle(
+                      color: Colors.black.withOpacity(0.5), fontSize: 16),
                 )
               ],
             ),
@@ -64,7 +65,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 }
 
 //navigate welcome screen
-_navigateOnboarding(BuildContext context) async{
+_navigateOnboarding(BuildContext context) async {
   await Future.delayed(const Duration(seconds: 3));
   // ignore: use_build_context_synchronously
   Navigator.pushReplacementNamed(context, RoutesName.onBoardingScreen);
