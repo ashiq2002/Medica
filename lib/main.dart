@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medica/screen/auth/bloc/auth_bloc.dart';
 import 'package:medica/screen/onboarding/bloc/onboarding_bloc.dart';
 import 'package:medica/util/route/my_route.dart';
 import 'package:medica/util/route/routes_name.dart';
@@ -16,20 +17,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider<OnBoardingBloc>(
-          create: (context) => OnBoardingBloc(),
-        )
-      ],
+        providers: [
+          BlocProvider<OnBoardingBloc>(create: (context)=> OnBoardingBloc(),),
+          BlocProvider<AuthBloc>(create: (context)=> AuthBloc(),),
+          BlocProvider<RememberMeBloc>(create: (context)=> RememberMeBloc(),),
+        ],
       child: MaterialApp(
         title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
           fontFamily: GoogleFonts.mukta().fontFamily,
         ),
         initialRoute: RoutesName.appScreen,
-        onGenerateRoute: (settings) => MyRoute.generateRoutes(settings),
+        onGenerateRoute:(settings)=> MyRoute.generateRoutes(settings),
       ),
     );
   }
