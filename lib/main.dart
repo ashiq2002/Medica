@@ -16,17 +16,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-        providers: [
-          BlocProvider<OnBoardingBloc>(create: (context)=> OnBoardingBloc(),)
-        ],
+      providers: [
+        BlocProvider<OnBoardingBloc>(
+          create: (context) => OnBoardingBloc(),
+        )
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
           fontFamily: GoogleFonts.mukta().fontFamily,
         ),
         initialRoute: RoutesName.appScreen,
-        onGenerateRoute:(settings)=> MyRoute.generateRoutes(settings),
+        onGenerateRoute: (settings) => MyRoute.generateRoutes(settings),
       ),
     );
   }
