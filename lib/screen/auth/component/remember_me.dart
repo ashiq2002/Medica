@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:medica/constent/app_colors.dart';
+import 'package:medica/res/theme/app_colors.dart';
 import 'package:medica/screen/auth/bloc/auth_bloc.dart';
 import 'package:medica/screen/auth/bloc/auth_event.dart';
 import 'package:medica/screen/auth/bloc/auth_state.dart';

@@ -12,6 +12,12 @@ class AuthErrorState extends AuthState{
   AuthErrorState(this.errorMessage);
 }
 
+class AuthObscureState {
+  bool obscure;
+
+  AuthObscureState({this.obscure = false});
+}
+
 class RememberMeState{
   bool isChecked;
 

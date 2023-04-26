@@ -17,4 +17,6 @@ class AuthTextSubmittedEvent extends AuthEvent{
   AuthTextSubmittedEvent(this.email, this.password);
 }
 
+class AuthObscureEvent {}
+
 class RememberMeEvent{}

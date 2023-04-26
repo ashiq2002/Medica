@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
           BlocProvider<OnBoardingBloc>(create: (context)=> OnBoardingBloc(),),
           BlocProvider<AuthBloc>(create: (context)=> AuthBloc(),),
           BlocProvider<RememberMeBloc>(create: (context)=> RememberMeBloc(),),
+          BlocProvider<AuthObscureTextBloc>(create: (context)=> AuthObscureTextBloc(),),
         ],
       child: MaterialApp(
         title: 'Flutter Demo',
