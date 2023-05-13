@@ -1,22 +1,27 @@
-import 'package:medica/component/my_form_field.dart';
-
-abstract class AuthEvent{}
-
-class AuthTextChangeEvent extends AuthEvent{
-  final String email;
-  final String password;
-  final FieldType fieldType;
-
-  AuthTextChangeEvent(this.email, this.password, this.fieldType);
+abstract class AuthEvent {
+  const AuthEvent();
 }
 
-class AuthTextSubmittedEvent extends AuthEvent{
+class SignInEvent extends AuthEvent {
   final String email;
   final String password;
+  final bool isObscure;
 
-  AuthTextSubmittedEvent(this.email, this.password);
+  SignInEvent({this.email = "", this.password = "", this.isObscure = true});
 }
 
-class AuthObscureEvent {}
+class SignupEvent extends AuthEvent {
+  final String email;
+  final String password;
+  final bool isObscure;
 
-class RememberMeEvent{}
+  SignupEvent({this.email = "", this.password = "", this.isObscure = true,});
+}
+
+class CheckboxEvent extends AuthEvent{
+  final bool isChecked;
+
+  CheckboxEvent({this.isChecked = false});
+}
+
+class AuthErrorEvent extends AuthEvent { }

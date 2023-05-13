@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medica/res/theme/app_colors.dart';
-import 'package:medica/screen/auth/bloc/auth_bloc.dart';
-import 'package:medica/screen/auth/bloc/auth_event.dart';
-import 'package:medica/screen/auth/bloc/auth_state.dart';
 
 class RememberMe extends StatelessWidget {
   final String text;
-  const RememberMe({Key? key, this.text = 'Remember me'}) : super(key: key);
+  final void Function(bool?)? onChanged;
+  final bool isChecked;
+  const RememberMe(
+      {Key? key,
+      this.text = 'Remember me',
+      this.onChanged,
+      required this.isChecked})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,22 +18,17 @@ class RememberMe extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         //check box
-        BlocBuilder<RememberMeBloc, RememberMeState>(builder: (context, state){
-          return Transform.scale(
-            scale: 1.2,
-            child: Checkbox(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5)),
-                side: const BorderSide(
-                    color: Color(AppColors.buttonPrimary), width: 2),
-                activeColor: const Color(AppColors.buttonPrimary),
-                value: state.isChecked,
-                onChanged: (value) {
-                  BlocProvider.of<RememberMeBloc>(context).add(RememberMeEvent());
-                  state.isChecked = value!;
-                }),
-          );
-        }),
+        Transform.scale(
+          scale: 1.2,
+          child: Checkbox(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5)),
+              side: const BorderSide(
+                  color: Color(AppColors.primaryColor), width: 2),
+              activeColor: const Color(AppColors.primaryColor),
+              value: isChecked,
+              onChanged: (value)=>onChanged!(value)),
+        ),
         const SizedBox(
           width: 5,
         ),

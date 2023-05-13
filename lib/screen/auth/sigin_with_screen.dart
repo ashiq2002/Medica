@@ -1,7 +1,7 @@
 // ignore_for_file: sort_child_properties_last
 
 import 'package:flutter/material.dart';
-import 'package:medica/component/my_button.dart';
+import 'package:medica/component/global/my_button.dart';
 import 'package:medica/component/shared/screen.dart';
 import 'package:medica/screen/auth/component/my_devider.dart';
 import 'package:medica/screen/auth/component/my_rich_text.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medica/component/my_button.dart';
+import 'package:medica/component/global/my_button.dart';
 
 class OnBoardingTile extends StatelessWidget {
   final String title;

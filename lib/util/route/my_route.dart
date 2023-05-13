@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medica/screen/profile/fill_profile_screen.dart';
 import 'package:medica/screen/auth/sigin_with_screen.dart';
 import 'package:medica/screen/auth/signin_screen.dart';
 import 'package:medica/screen/onboarding/onboarding_screen.dart';
@@ -27,6 +28,9 @@ class MyRoute{
 
       case RoutesName.signInScreen: //navigate to sign in screen
         return MaterialPageRoute(builder: (_)=> const SignInScreen());
+
+      case RoutesName.fillProfileScreen: //navigate to fill profile screen
+        return MaterialPageRoute(builder: (_)=> const FillProfileScreen());
 
       default:
         return MaterialPageRoute(builder: (_)=> const Scaffold(

@@ -7,7 +7,7 @@ class MyButton extends StatelessWidget {
   final int color;
 
   const MyButton(
-      {Key? key, required this.text, required this.onTap, this.color = AppColors.buttonPrimary})
+      {Key? key, required this.text, required this.onTap, this.color = AppColors.primaryColor})
       : super(key: key);
 
   @override

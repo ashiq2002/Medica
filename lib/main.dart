@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:medica/screen/auth/bloc/auth_bloc.dart';
 import 'package:medica/screen/onboarding/bloc/onboarding_bloc.dart';
+import 'package:medica/screen/profile/bloc/profile_bloc.dart';
 import 'package:medica/util/route/my_route.dart';
 import 'package:medica/util/route/routes_name.dart';
 
@@ -20,8 +21,7 @@ class MyApp extends StatelessWidget {
         providers: [
           BlocProvider<OnBoardingBloc>(create: (context)=> OnBoardingBloc(),),
           BlocProvider<AuthBloc>(create: (context)=> AuthBloc(),),
-          BlocProvider<RememberMeBloc>(create: (context)=> RememberMeBloc(),),
-          BlocProvider<AuthObscureTextBloc>(create: (context)=> AuthObscureTextBloc(),),
+          BlocProvider<ProfileBloc>(create: (context)=> ProfileBloc(),),
         ],
       child: MaterialApp(
         title: 'Flutter Demo',
